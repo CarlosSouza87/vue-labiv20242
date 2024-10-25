@@ -9,7 +9,7 @@
         <label for="senha" id="labelSenha">Senha: </label>
         <input id="senha" type="password" v-model="senha"/>
       </p>
-      <button @click="login">Login</button>
+      <button @click="store.login(nome, senha)">Login</button>
       <p v-if="store.erro">{{ store.erro }}</p>
       <p v-if="store.token">{{ store.token }}</p>
     </div>
@@ -19,13 +19,10 @@
   
   import { ref } from 'vue';
   import axios from 'axios';
-  import { useUsuarioStore } from '@/stores/usuario';
+  import { usuarioStore } from '@/stores/usuario';
   
   const nome = ref<string>("Aluno");
   const senha = ref<string>("123456");
-  const store = useUsuarioStore();
+  const store = usuarioStore();
 
-  async function login() {
-    store.login(nome.value, senha.value);
-  }
   </script>

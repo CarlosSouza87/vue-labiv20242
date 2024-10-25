@@ -2,7 +2,7 @@ import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import axios from 'axios'
 
-export const useUsuarioStore = defineStore('usuario', () => {
+export const usuarioStore = defineStore('usuario', () => {
   const nomeUsuario = ref<string>()
   const token = ref<string>()
   const erro = ref<string>()
@@ -16,6 +16,7 @@ export const useUsuarioStore = defineStore('usuario', () => {
                 }
             ));
         nomeUsuario.value = nome;
+        erro.value = '';
         token.value = response.data.token;
     }
     catch(ex) {
@@ -24,6 +25,7 @@ export const useUsuarioStore = defineStore('usuario', () => {
   }
 
   return { nomeUsuario, token, erro, login }},
-{ 
-    persist: true 
-})
+{
+    persist: true
+}
+)

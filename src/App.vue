@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
-import { useUsuarioStore } from '@/stores/usuario';
+import { usuarioStore } from '@/stores/usuario';
 
-const store = useUsuarioStore();
+const store = usuarioStore();
 </script>
 
 <template>
@@ -11,7 +11,7 @@ const store = useUsuarioStore();
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="Hatsune Miku" />
+      <HelloWorld msg="You did it!" />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
