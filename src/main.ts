@@ -10,7 +10,7 @@ import router from './router'
 import axios from 'axios'
 import { usuarioStore } from '@/stores/usuario';
 
-axios.defaults.baseURL = 'https://8080-mineda-springbootlab420-0au4mp3yyrw.ws-us116.gitpod.io/'
+axios.defaults.baseURL = 'https://8080-mineda-springbootlab420-0au4mp3yyrw.ws-us117.gitpod.io/'
 
 axios.interceptors.request.use(config => {
     const store = usuarioStore();
